@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="indi.daniel.fling.hibernate.entityxml.User" table="user">
+        <!--  在User里面 id 的set 和 get 方法里 也要设置为Integer类型的，不然会报错 -->
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property name="username" column="username"  type="java.lang.String" length="20" />
+        <property name="password" column="password"  type="java.lang.String" length="20"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,9 @@
+README.MD
+commons-logging-1.2.jar
+spring-aop-4.3.18.RELEASE.jar
+spring-beans-4.3.18.RELEASE.jar
+spring-context-4.3.18.RELEASE.jar
+spring-core-4.3.18.RELEASE.jar
+spring-expression-4.3.18.RELEASE.jar
+spring-web-4.3.18.RELEASE.jar
+spring-webmvc-4.3.18.RELEASE.jar

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="indi.daniel.fling.hibernate.entityxml.Product" table="product">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name"  type="java.lang.String" length="20" />
+        <property name="price" column="price"  type="java.lang.Float" length="20" />
+        <many-to-one name="category" class="indi.daniel.fling.hibernate.entityxml.Category" column="category_id"/>
+
+    </class>
+</hibernate-mapping>
