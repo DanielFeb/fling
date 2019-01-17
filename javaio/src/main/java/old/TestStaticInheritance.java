@@ -1,3 +1,5 @@
+package old;
+
 /**
  * Created by daniel on 2018/11/7.
  */
@@ -14,21 +16,21 @@ public class TestStaticInheritance {
 
 class Parent {
     public /*static*/ void eat(Fruit f) {
-        System.out.println("Parent eat fruit: " + f.getName());
+        System.out.println("old.Parent eat fruit: " + f.getName());
     }
 
     public /*static*/ void eat(Apple a) {
-        System.out.println("Parent eat apple: " + a.getName());
+        System.out.println("old.Parent eat apple: " + a.getName());
     }
 }
 
 class Child extends Parent {
     public /*static*/ void eat(Fruit f) {
-        System.out.println("Child eat fruit: " + f.getName());
+        System.out.println("old.Child eat fruit: " + f.getName());
     }
 
     public /*static*/ void eat(Apple a) {
-        System.out.println("Child eat apple: " + a.getName());
+        System.out.println("old.Child eat apple: " + a.getName());
     }
 }
 

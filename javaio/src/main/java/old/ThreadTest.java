@@ -1,3 +1,5 @@
+package old;
+
 public class ThreadTest {
 
     public static void main(String[] args) {
