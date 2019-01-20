@@ -10,7 +10,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-//只有一个线程处理所有的事件，会成为瓶颈
+
 public class NIOServerWithSelector {
     public static void main (String[] args) throws Exception {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
@@ -20,6 +20,7 @@ public class NIOServerWithSelector {
 
 //        SelectionKey selectionKey  = serverSocketChannel.register(selector, 0, serverSocketChannel);
 //        selectionKey.interestOps(SelectionKey.OP_ACCEPT);
+//        上两行注释等同于下面这行代码
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT, serverSocketChannel);
 
         serverSocketChannel.socket().bind(new InetSocketAddress(8080));
@@ -27,7 +28,8 @@ public class NIOServerWithSelector {
         System.out.printf("启动成功");
 
         while(true) {
-            selector.select();
+
+            selector.select(); //等同于selector.selectNow();
 
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
 
@@ -63,7 +65,7 @@ public class NIOServerWithSelector {
                         byte[] bytesReceived = new byte[bufferReceived.limit()];
                         bufferReceived.get(bytesReceived);
                         String receivedMessage = new String(bytesReceived, "UTF-8");
-                        System.out.println("收到数据：" + receivedMessage + "。来自：" + attachedSocketChannel.getRemoteAddress());
+                        System.out.println("收到数据：" + receivedMessage + " //来自：" + attachedSocketChannel.getRemoteAddress());
 
 
                         String response = "HTTP/1.1 200 OK\r\n" +
@@ -80,7 +82,6 @@ public class NIOServerWithSelector {
                 }
 
             }
-            selector.selectNow();
         }
 
     }

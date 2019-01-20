@@ -6,6 +6,10 @@ import java.net.Socket;
 import java.nio.charset.Charset;
 import java.util.Scanner;
 
+/**
+ * 原作者：张峰
+ * 直接基于非阻塞的写法,一个线程处理轮询所有请求
+ */
 public class BIOClient {
 
     private static Charset charset = Charset.forName("UTF-8");

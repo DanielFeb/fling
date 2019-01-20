@@ -6,6 +6,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.Scanner;
 
+/**
+ * 原作者：张峰
+ * 直接基于非阻塞的写法,一个线程处理轮询所有请求
+ */
 //NIO means  Net + IO
 public class NIOClient {
     public static void main(String args[]) throws IOException {

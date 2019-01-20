@@ -6,6 +6,10 @@ import java.net.Socket;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+/**
+ * 原作者：张峰
+ * 直接基于非阻塞的写法,一个线程处理轮询所有请求
+ */
 public class BIOServer {
 
     public static void main(String args[]) throws IOException {

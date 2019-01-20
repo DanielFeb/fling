@@ -2,6 +2,10 @@ package indi.daniel.fling.nio;
 
 import java.nio.ByteBuffer;
 
+/**
+ * 原作者：张峰
+ * 直接基于非阻塞的写法,一个线程处理轮询所有请求
+ */
 public class BufferDemo {
     public static void main(String[] args) {
         // 构建一个byte字节缓冲区，容量是4
