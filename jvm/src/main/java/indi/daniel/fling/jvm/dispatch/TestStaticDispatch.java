@@ -36,5 +36,7 @@ public class TestStaticDispatch {
         System.out.println("传入相同参数，从静态分配可知符号引用相同，但是结果不同");
         realHuman.wear(realClothes);
         fakeHuman.wear(realClothes);
+
+        //TODO: 1.7之前动态单分派， 之后动态多分派？
     }
 }
