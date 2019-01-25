@@ -1,4 +1,4 @@
 package indi.daniel.fling.jvm.dispatch.statics;
 
-public class Sweater {
+public class Sweater extends Clothes {
 }
