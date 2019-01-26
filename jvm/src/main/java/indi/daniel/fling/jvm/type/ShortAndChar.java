@@ -5,7 +5,7 @@ package indi.daniel.fling.jvm.type;
  */
 public class ShortAndChar {
     public static void main(String[] args) {
-        short myshort = 1;
+        short myshort = 99;
         char mychar = 'c';
         System.out.println((char) myshort);
         System.out.println((short) mychar);
