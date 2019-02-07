@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="indi.daniel.fling.springboot.datasource.mybatis.dao.UserDao">
 
-    <insert id="create" parameterType="indi.daniel.fling.springboot.datasource.mybatis.entity.User" useGeneratedKeys="true" keyProperty="id">
+    <insert id="create" parameterType="user" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO t_user
         (user_name,
         sex,
@@ -14,7 +14,7 @@
     </insert>
 
     <!-- Alias is used here, resultType = user -->
-    <select id="getUser" parameterType="long" resultType="indi.daniel.fling.springboot.datasource.mybatis.entity.User">
+    <select id="getUser" parameterType="long" resultType="user">
         select id, user_name as userName, sex, note from t_user where id = #{id}
     </select>
 </mapper>

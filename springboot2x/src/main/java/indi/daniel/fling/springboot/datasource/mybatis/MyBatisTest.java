@@ -4,6 +4,7 @@ import indi.daniel.fling.springboot.datasource.mybatis.config.DefaultConfig;
 import indi.daniel.fling.springboot.datasource.mybatis.config.YamlPropertyLoaderFactory;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
@@ -22,21 +23,24 @@ import java.util.Arrays;
 @PropertySource(value = "classpath:datasource-mybatis.yml", factory = YamlPropertyLoaderFactory.class)
 @EnableConfigurationProperties(DefaultConfig.class)
 @SpringBootApplication(scanBasePackages = "indi.daniel.fling.springboot.datasource.mybatis")
-//@Mapper Annotation will auto scanned by spring
 @MapperScan(
-        value = "indi.daniel.fling.springboot.datasource.mybatis.dao",
+        basePackages={
+                "indi.daniel.fling.springboot.datasource.mybatis.mapper",
+                "indi.daniel.fling.springboot.datasource.mybatis.dao"
+        },
         //限定接口必须包含注解 @Repository
         annotationClass = Repository.class
     )
 public class MyBatisTest{
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder()
-                .listeners(new EnvironmentPrepareListener())
-                .sources(MyBatisTest.class)
-                .bannerMode(Banner.Mode.CONSOLE)
-                .build()
-                .run(args);
+        SpringApplication.run(MyBatisTest.class, args);
+//        new SpringApplicationBuilder()
+//                .listeners(new EnvironmentPrepareListener())
+//                .sources(MyBatisTest.class)
+//                .bannerMode(Banner.Mode.CONSOLE)
+//                .build()
+//                .run(args);
     }
 
     static class EnvironmentPrepareListener implements

@@ -33,4 +33,10 @@ public class UserController {
         User user = userDao.getUser(id);
         return user;
     }
+
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String hello() {
+        return "hello world";
+    }
 }

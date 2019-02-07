@@ -27,10 +27,10 @@ public interface UserDao {
 //            @Arg(name="sex", column = "sex", jdbcType = JdbcType.INTEGER, javaType = SexEnum.class, typeHandler = SexTypeHandler.class)
 //    )
     long create(User user);
-    @Select("select * from t_user where id = #{userId}")
-    @Results({
-            @Result(property = "sex",  column = "sex", javaType = SexEnum.class, typeHandler = SexTypeHandler.class),
-            @Result(property = "userName", column = "user_name")
-    })
+//    @Select("select * from t_user where id = #{userId}")
+//    @Results({
+//            @Result(property = "sex",  column = "sex", javaType = SexEnum.class, typeHandler = SexTypeHandler.class),
+//            @Result(property = "userName", column = "user_name")
+//    })
     User getUser(long userId);
 }

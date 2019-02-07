@@ -12,8 +12,7 @@ spring:
       maximum-pool-size: 10
 
 mybatis:
-  #TODO:定义mapper xml的位置，暂时没有解决方案
-#  mapper-locations:
-#    - classpath:indi/daniel/fling/springboot/datasource/mybatis/mapper/UserDao.xml
-  type-aliases-package: indi.daniel.fling.springboot.datasoure.mybatis.entity
-  type-handlers-package: indi.daniel.fling.springboot.datasoure.mybatis.dataconverter
+  #TODO:定义mapper xml的位置
+  mapper-locations: classpath:indi/daniel/fling/springboot/datasource/mybatis/mapper/*.xml
+  type-aliases-package: indi.daniel.fling.springboot.datasource.mybatis.entity
+  type-handlers-package: indi.daniel.fling.springboot.datasource.mybatis.dataconverter
