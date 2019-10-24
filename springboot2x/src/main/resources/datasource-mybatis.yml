@@ -1,4 +1,4 @@
-server:
+zserver:
   port: 8081
 
 spring:
@@ -12,7 +12,14 @@ spring:
       maximum-pool-size: 10
 
 mybatis:
-  #TODO:定义mapper xml的位置
+  #定义mapper xml的位置
   mapper-locations: classpath:indi/daniel/fling/springboot/datasource/mybatis/mapper/*.xml
   type-aliases-package: indi.daniel.fling.springboot.datasource.mybatis.entity
   type-handlers-package: indi.daniel.fling.springboot.datasource.mybatis.dataconverter
+
+logging:
+  level:
+    root: DEBUG
+    org:
+      springframework: DEBUG
+      mybatis: DEBUG

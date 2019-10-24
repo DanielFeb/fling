@@ -33,7 +33,7 @@ public class TestStaticDispatch {
         Human realHuman = new Human();
         Human fakeHuman = new Man();
         Clothes realClothes  = new Clothes();
-        System.out.println("传入相同参数，从静态分配可知符号引用相同，但是结果不同");
+        System.out.println("传入相同参数，从静态分配可知符号引用相同(indi/daniel/fling/jvm/dispatch/Human.wear:(Lindi/daniel/fling/jvm/dispatch/Clothes;)V)，但是结果不同");
         realHuman.wear(realClothes);
         fakeHuman.wear(realClothes);
 

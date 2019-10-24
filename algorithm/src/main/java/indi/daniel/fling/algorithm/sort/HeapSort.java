@@ -5,6 +5,7 @@ package indi.daniel.fling.algorithm.sort;
  */
 public class HeapSort {
     public static void sort(int[] array) {
+        //TODO:错误的写法，参考 https://www.cnblogs.com/onepixel/articles/7674659.html
         int n = array.length;
 
         for (int i = n - 1; i > 0; i --) {
