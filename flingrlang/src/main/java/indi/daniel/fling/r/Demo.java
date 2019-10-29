@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Demo {
     public static void main(String[] args) throws REngineException, REXPMismatchException {
-        testGrammer();
+        testGrammar();
 //        testError();
 //
 //        StringWriter sw = new StringWriter();
@@ -30,18 +30,19 @@ public class Demo {
 //        testMultiThread();
     }
 
-    public static void testGrammer() throws REngineException, REXPMismatchException {
+    public static void testGrammar() throws REngineException, REXPMismatchException {
         GreatRConnection rc = new GreatRConnection(new RConnection());
         //单值的加法运算
         String script ="result=\"\"\n" +
                         "v <- LETTERS[1:4]\n" +
                         "for ( i in v) {\n" +
                         "   print(i)\n" +
+                        "   print(value){\n" +
                         "   result=paste(result,i)\n" +
                         "}\n" +
                         "return(result)\n";
         try {
-            System.out.println(rc.tryParseAndEval(script).asString());
+            System.out.println(rc.tryParseAndEval2(script).asString());
         } catch (RLangTryErrorException e) {
             System.out.println("成功捕获到异常：" + e.getErrorMessage());
         }
