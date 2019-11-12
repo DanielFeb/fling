@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * created by CaiBaoHong at 2018/4/18 15:11<br>
  */
 @SpringBootApplication
-public class Application {
+public class BootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(BootApplication.class,args);
     }
 
 }
